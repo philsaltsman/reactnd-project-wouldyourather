@@ -1,4 +1,4 @@
-# reactnd-project-myreads
+# reactnd-project-wouldyourather
 # Would You Rather Project
 
 # Author:  Phil Saltsman
