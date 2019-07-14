@@ -1,42 +1,33 @@
 import React, { Component, Fragment} from 'react';
-import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
-//import LoadingBar from 'react-redux-loading'
-import Nav from './Nav'
-import HomeUnanswered from './HomeUnanswered'
-import HomeAnswered from './HomeAnswered'
-import NewQuestion from './NewQuestion'
-import LeaderBoard from './LeaderBoard'
-import SignIn from './SignIn'
+//import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import LoadingBar from 'react-redux-loading'
+import Loading from './Loading'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import AppRouter from './AppRouter'
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {loading: this.props.loading};
+  }
+
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
   render() {
     return (
-      <Router>
-        <Fragment>
-        {/*<LoadingBar>*/}
+      <Fragment>
         
-        <div className="container">
-          <Nav />
-          <div align='center'>
-             <Redirect from="/" to="/unanswered" />
-             {this.props.loading === true
-              ? null
-              : <Route path={["/home", "/unanswered", "/"]} exact component={HomeUnanswered} />
-              }
-              
-              <Route path='/answered' exact component={HomeAnswered} />
-              <Route path='/newquestion' component={NewQuestion} />
-              <Route path='/leaderboard' component={LeaderBoard} />
-              <Route path='/signin' component={SignIn} />
-            </div>
-        </div>
-        </Fragment>
-      </Router>
+        <LoadingBar className='loadingBar' />
+          {this.props.loading === true
+            ? <Loading />
+            : <Fragment><div className="container"><AppRouter /></div></Fragment>
+            }
+        
+      
+      </Fragment>
     )
 
   }
@@ -45,6 +36,7 @@ class App extends Component {
 
 
 function mapStateToProps({authedUser}) {
+  
   return {
     loading: authedUser===null
   }

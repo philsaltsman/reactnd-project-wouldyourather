@@ -1,0 +1,43 @@
+
+  
+.navlinks:hover {
+  text-decoration:underline;
+}
+  
+
+.navul {
+  position:relative;
+  display: flex;
+  width:auto;
+  height:100%;
+  border: 1px dashed lightgray;
+  padding-left:5px;
+}
+  
+.nav li:first-child {
+  padding-left: 0;
+}
+
+.nav {
+  display: inline;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+  overflow:hidden;
+  z-index:1;
+}
+
+  
+.topRightNavBtn {
+  position:relative;
+  float: right;
+  top:0px;
+  right:0px;
+  margin:5px;
+  margin-top:16px;
+  padding:10px;
+  height:18px;
+  overflow:hidden;
+  border: 1px dashed lightgray;
+  
+}

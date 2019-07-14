@@ -1,0 +1,181 @@
+.barRight {
+    padding-right:10px;
+    border-right: 1px solid black;
+  }
+  
+  .barLeft {
+    padding-left:10px;
+    border-left: 1px solid black;
+  }
+  
+  .padLeft {
+    padding-left:10px;
+  }
+  
+  .noSelect {
+    pointer-events:none;
+  }
+  
+  .circled {
+    padding:15px;
+    display: inline-block;
+    border: 2px solid rgba(255,0,0,.7);
+    border-radius: 10px;
+    pointer-events:none;
+  }
+  
+  .notCircled {
+    padding:15px;
+    display: inline-block;
+    pointer-events:none;
+  }
+  
+  
+  .newInput {
+    width:50%;
+    border: 1px solid #DDDDDD;
+  }
+  
+  .submitBtn {
+    margin:30px;
+    padding:10px;
+    width:auto;
+    background-color: white;
+    color: black;
+    border: 1px solid #DDDDDD;
+  }
+  
+  
+  
+  .smallredtxt {
+    font-size:8pt;
+    padding:2px;
+    color:red;
+    opacity:.8;
+    pointer-events:none;
+  }
+  
+
+  .inverted {
+    filter: invert(100%);
+    opacity:.65;
+  }
+  .inverted:hover {
+    opacity:1;
+  }
+
+
+
+
+  .listSelected {
+    color: #DDDDDD;
+    background-color: #555555;
+  }
+  
+  .inputSelected {
+    width:30%;
+    color: #DDDDDD;
+    background-color: #555555;
+  }
+  
+  .inputNotSelected {
+    width:30%;
+    background-color: white;
+    color: black;
+    border: 1px solid #DDDDDD;
+  }
+  
+  .optionBtn {
+    margin:2%;
+    padding:1%;
+    width:95%;
+    background-color: white;
+    color: black;
+    border: 1px solid #DDDDDD;
+  }
+  
+  .optionSelected {
+    color: #DDDDDD;
+    background-color: #555555;
+  }
+  
+  .marginLR10 {
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+
+  .grayedout {
+    pointer-events: none;
+    color:#CCCCCC;
+  }
+  
+  .grayedoutinline {
+    padding:10px;
+    display:inline-block;
+    pointer-events: none;
+    color:#CCCCCC;
+  }
+
+
+
+  .btn {
+    text-transform: uppercase;
+    margin: 35px auto;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.29);
+    cursor: pointer;
+    background: #fff;
+    font-size: 16px;
+    width: 250px;
+    position: relative;
+  }
+  
+  .btn:hover {
+    border-color: rgba(0,0,0,.5);
+    text-decoration: none;
+  }
+  
+  .btn:focus {
+    outline: 0;
+    font-weight: 700;
+    border-width: 2px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .vcenter {
+    height: 100%;
+    vertical-align:center;
+    text-align: center;
+  }
+  
+  .right {
+    text-align: right;
+  }
+  
+  .rightNoSelect {
+    text-align: right;
+    pointer-events:none;
+  }
+  
+  .rightNoSelectcircled {
+    display:inline-block;
+    padding:5px;
+    text-align: right;
+    pointer-events:none;
+    border: 2px solid red;
+    border-radius: 25px;
+  }
+  
+  .rightNoSelectinline {
+    display:inline-block;
+    text-align: right;
+    pointer-events:none;
+  }
+  
+  .active {
+    font-weight: bold;
+  }

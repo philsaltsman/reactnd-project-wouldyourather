@@ -1,0 +1,23 @@
+.avatar {
+    height: 20vmin;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.avatarNav {
+    height: 4vmin;
+    border-radius: 25px;
+    margin: -7px;
+    margin-right:5px;
+    padding:0px;
+    opacity:.7;
+}
+
+.avatarNav:hover {
+    height: 4vmin;
+    border-radius: 25px;
+    margin: -7px;
+    margin-right:5px;
+    padding:0px;
+    opacity:1;
+}

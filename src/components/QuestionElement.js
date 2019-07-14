@@ -1,33 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { formatQuestion, formatDate } from '../utils/helpers'
+import isVarUndefined from '../functions/isVarUndefined';
 
 
 class Question extends Component {
-    optionBtn = (e, id, option) => {
-        e.preventDefault()
 
-        // todo: 
-        // send the data for the respective option
-        // and Redirect to component displaying total votes for that question
-    }
     render() {
-        console.log(this.props)
+
 
         const {question } = this.props
 
-        if (question === null) {
-            return <p>This Question doesn't exist</p>
+        if (isVarUndefined(question)) {
+            return <p><b>404</b> - This Question doesn't exist</p>
         }
 
         const {
-            name, id, timestamp, avatar, optionOneVotes, optionOneText, optionTwoVotes, optionTwoText
+            name, id, timestamp, avatar, optionOneText, optionTwoText
         } = question
-        
+
 
         return (
+            <Link to={'/questions/'+id}>
             <div className='question' align='left'>
-                {/*<ul id={this.props.id}>{this.props.id}</ul>*/}
                 <div className='question-avatar'>
                     <img 
                         src={avatar}
@@ -41,23 +37,22 @@ class Question extends Component {
                     </div>
                     <br />
                     <div className='question-title' align='center'>
-                        <b><i>Would you rather</i></b>
+                        <b><i>Would you Rather...</i></b>
                     </div>
                     <br />
                     <div className='question-options'>
-                        <button className='optionBtn' onClick={(e) => this.optionBtn(e,id,1)} >
-                        {optionOneText}?
-                        </button>
-                       { /*Votes:  {optionOneVotes.length} / {optionOneVotes.length+optionTwoVotes.length} */ }
-                        <br /><br />
-                        <button className='optionBtn' onClick={(e) => this.optionBtn(e,id,2)} >
-                        {optionTwoText}? 
-                        </button>
-                         
-                        { /* Votes:  {optionTwoVotes.length} / {optionOneVotes.length+optionTwoVotes.length} */ }
+                        <div className='noSelect'>...{optionOneText}?</div>
+                        <div className='center'>
+                            <i className='grayedout'>- or -</i>
+                        </div>
+                        <div className='rightNoSelect'>...{optionTwoText}?</div>
+                    </div>
+                    <div className='question-bottom'>
+                        Click here to view
                     </div>
                 </div>
             </div>
+            </Link>
         )
     }
 }
@@ -68,7 +63,6 @@ function mapStateToProps({authedUser,users,questions},{id}) {
     return {
         authedUser,
         user: users,
-        //question: question,
         question: formatQuestion(question,users[question.author],authedUser)
     }
 }
