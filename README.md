@@ -15,6 +15,9 @@ $ create-react-app
 
 See `## What You're Getting` from the `## Provided by Starter Template` for more details if needed or interested.  This information should include greater details should you need or desire editing or making changes to this provided application for any reason.
 
+## How to play
+Users must authenticate in order to be able to access questions/content.  Once authenticated, the home page provides you a list of unanswered questions by default.  You may access answered questions from the top which directs to /answered so it is bookmarkable.  Both answered or unanswered questions are simply previews of the question.  In order to answer and/or view the results page for that question, you must click on it to be directed to the /question/:id.  Be sure to keep track of your friends or others from the Leaderboard!  Scores are a total of answered/asked questions.
+
 --
 
 ## TL;DR
